@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet"  type="text/css" href="{{ url_for('static',filename='addexp.css') }}">
+    </head>
+
+    <body>
+       <div class=nav>
+         <a href="{{url_for('home')}}">Home</a>
+         <a class="active" href="{{url_for('addexp')}}">Add expense</a>
+         <a href="{{url_for('viewexp')}}">view expenses</a>
+         <a href="{{url_for('delexp')}}">Delete expenses</a>
+         <a href="{{url_for('settle')}}">settle</a>
+         <a href="{{url_for('logout')}}">Logout</a>
+        </div>
+        <h1>ADD EXPENSE</h1>
+        <form action="" id="exp" method="post">
+          <div>
+            <label>Title:</label><input type="text" name="title" value="{{request.form.title}}">
+         </div>
+         <div> 
+            <label>Description:</label><textarea name="des" value="{{request.form.des}}"></textarea>
+        </div>
+        <div>
+            <label>Amount:</label><input type="number" name="amount" value="{{request.form.amount}}">
+        </div>
+        <div class="button">
+                <button type="submit" form="exp">ADD EXPENSE</button>
+        </div>
+        </form>
+        <h3>split expense among..(optional)</h3>
+        <form action="" method="post" id="split">
+                <div>
+                   <label>enter username:</label><input type="text" name="splituser">
+                </div>
+                <div>
+                    <label>enter split amount:</label><input type="number" name="splitamt">
+                </div>
+                <div>
+                  <input type="submit" value="split">
+                </div>
+               </form>
+        
+        
+        <ul>
+        </ul>
+    </body>
+    <script>
+    
+    </script>
+
+
+</html>

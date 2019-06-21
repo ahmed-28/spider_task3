@@ -1,0 +1,72 @@
+div > a{
+    font-size: 20px; 
+    padding: 20px;
+    float:left;
+    text-decoration: none;
+    color: teal;
+}
+
+.active{
+    background-color: #000;
+}
+
+.nav {
+    background-color: rgb(131, 6, 33);
+    overflow: hidden;
+  }
+
+table,th,td{
+    border: 1px solid black;
+}
+
+table{
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    padding: 20px;    
+}
+
+th{
+    height: 50px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: lightcoral;
+}
+
+h1{
+   text-align: center;
+   color: teal;
+}
+.button{
+    padding: 20px;
+    margin-left: 50px;
+}
+
+form{
+    border:1px solid black;
+    width: 500px;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+form div{
+    padding: 5px;
+}
+
+label{
+    display: inline-block;
+    text-align: left;
+    width: 100px;
+    padding: 10px;
+}
+
+input{
+    width: 150px;
+}
+
+body{
+    background-color: gray;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>view-expense</title>
+     <meta charset="utf-8">
+     <link rel="stylesheet"  type="text/css" href="{{ url_for('static',filename='viewexp.css') }}">
+    </head>
+ <body>
+    <div class=nav>
+     <a href="{{url_for('home')}}">Home</a>
+     <a class="active" href="{{url_for('addexp')}}">Add expense</a>
+     <a href="{{url_for('viewexp')}}">view expenses</a>
+     <a href="{{url_for('delexp')}}">Delete expenses</a>
+     <a href="{{url_for('settle')}}">settle</a>
+     <a href="{{url_for('logout')}}">Logout</a>
+    </div>
+    <h1>Your expenses</h1>
+    {% if data %}
+    <table>
+     <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>expense</th>
+     </tr>
+     {% for d in data %}
+     <tr onclick="delexp(this)">
+         <td>{{d[1]}}</td>
+         <td>{{d[2]}}</td>
+         <td>{{d[3]}}</td>
+     </tr>
+     {% endfor %}
+    </table>
+ {% else %}
+  <h3>no expenses</h3>
+ {% endif %}
+ </body>
+ </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet"  type="text/css" href="{{ url_for('static',filename='home.css') }}">
+    </head>
+
+    <body>
+      <div class=nav>
+        <a class=active href="#">Home</a>
+        <a href="{{url_for('addexp')}}">Add expense</a>
+        <a href="{{url_for('viewexp')}}">view expenses</a>
+        <a href="{{url_for('delexp')}}">Delete expenses</a>
+        <a href="{{url_for('settle')}}">settle</a>
+        <a href="{{url_for('logout')}}">Logout</a>
+      </div>
+      <h1>HOME</h1>
+      <p>welcome,{{ session["user"] }}</p>
+      <h3>Current balance:</h3>
+      <p id="bal">{{ balance }}</p>
+      <form action="" method="POST" id="addbal">
+          <div>
+              <label>enter current balance:</label>
+              <input type="number" name="bal" value="{{request.form.bal}}">
+          </div>
+      </form>
+      <div class="button">
+          <button type="submit" form="addbal">ADD BALANCE</button>
+      </div>
+      {% if data %}
+      <ul>
+        {% for d in data %}
+        <li>{{d[0]}} owes you {{d[1]}} rupees</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </body>
+
+</html>

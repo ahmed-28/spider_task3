@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>Home page</title>
+     <meta charset="utf-8">
+     <link rel="stylesheet"  type="text/css" href="{{ url_for('static',filename='delexp.css') }}">
+    </head>
+ <body>
+    <div class=nav>
+     <a href="{{url_for('home')}}">Home</a>
+     <a class="active" href="{{url_for('addexp')}}">Add expense</a>
+     <a href="{{url_for('viewexp')}}">view expenses</a>
+     <a href="{{url_for('delexp')}}">Delete expenses</a>
+     <a href="{{url_for('settle')}}">settle</a>
+     <a href="{{url_for('logout')}}">Logout</a>
+    </div>
+    <h1>delete expense</h1>
+    {% if data %}
+    <table>
+     <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>expense</th>
+     </tr>
+     {% for d in data %}
+     <tr onclick="delexp(this)">
+         <td>{{d[1]}}</td>
+         <td>{{d[2]}}</td>
+         <td>{{d[3]}}</td>
+     </tr>
+     {% endfor %}
+    </table>
+ {% else %}
+  <h3>no expenses</h3>
+ {% endif %} 
+  <form action="" method="post" name="delete" id="form1">
+      <div>
+          <label>slected title:</label> <input type="text" name="title">
+      </div>
+  </form>
+  <div class="button">
+      <button type="submit" form="form1">DELETE</button>
+  </div>
+
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+      function delexp(row){
+          var x=row.cells;
+          Title=x[0].innerHTML;
+          var form=document.forms.delete;
+          form.title.value=Title;
+          console.log("s");
+      }
+  </script>
+
+
+</html>
