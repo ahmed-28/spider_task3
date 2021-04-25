@@ -1,1 +1,0 @@
-from walletmanager import app
