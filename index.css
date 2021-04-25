@@ -1,0 +1,10 @@
+.active{
+    background-color: rgba(221, 17, 65, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.ct-chart{
+    position: relative;
+    top:100px;
+}

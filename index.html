@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="ui center aligned container">
+        <h1 class="ui red header">Revenue Overview</h1>
+
+        <input type="file" name="totalinput" id="totalinput" style="margin:40px">
+        <div class="ui stackable equal width grid">
+            <div class="active column" onclick="change_active('year')" id ="year">
+                Yearly
+            </div>
+            <div class="column" onclick="change_active('month')" id ="month">
+                Monthly
+            </div>
+            <div class="column" onclick="change_active('week')" id ="week">
+                Weekly
+            </div>
+        </div>
+        <div class="ct-chart"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+</body>
+<script src="./index.js"></script>
+</html>
